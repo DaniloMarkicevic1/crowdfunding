@@ -1,0 +1,20 @@
+@use './variables' as *;
+* {
+    margin: 0;
+    padding: 0;
+    body {
+        font-family: $fontFamily;
+        color: map-get($colors, text);
+        background-color: map-get($colors, background);
+        .headerBackground {
+            min-width: 100%;
+            min-height: 300px;
+            background-image: map-get($backgrounds, backgroundMob);
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            background-position: center;
+            // padding: 0 0 244px 0;
+        }
+    }
+}
+// sass --watch styles/style.scss styles/css/css.css

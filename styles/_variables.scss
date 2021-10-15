@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Commissioner:wght@400;500;700&display=swap');
+
+$fontFamily: 'Commissioner', sans-serif;
+
+$colors: (
+    button: #3cb3ab,
+    buttonActive: #147a73,
+    text: #7a7a7a,
+    boldText: #000000,
+    background: #fafafa,
+);
+
+$borderRadius: 8px;
+$border: 1px solid rgba(0, 0, 0, 0.0497193);
+$innerBorder: 1px solid rgba(0, 0, 0, 0.15);
+$navActiveBackground: linear-gradient(
+    180deg,
+    #000000 0%,
+    rgba(0, 0, 0, 0.0001) 100%
+);
+$backgrounds: (
+    backgroundMob: url(/assets/images/image-hero-mobile.jpg),
+    backgroundDesk: url(/assets/images/image-hero-desktop.jpg),
+);
