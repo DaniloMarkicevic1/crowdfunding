@@ -3,14 +3,41 @@
 $fontFamily: 'Commissioner', sans-serif;
 
 $colors: (
+    white: #ffffff,
     button: #3cb3ab,
     buttonActive: #147a73,
     text: #7a7a7a,
-    boldText: #000000,
+    black: #000000,
     background: #fafafa,
+    border: rgba(47, 47, 47, 0.1),
+    overlayBackground: rgba(0, 0, 0, 0.5),
+    disabledBtn: #2f2f2f,
 );
-
-$borderRadius: 8px;
+$fonts: (
+    sizes: (
+        itemsLeft: 15px,
+        xxs: 14px,
+        xs: 16px,
+        s: 18px,
+        m: 20px,
+        l: 32px,
+    ),
+    lineHeight: (
+        xxs: 17px,
+        xs: 20px,
+        s: 22px,
+        m: 24px,
+    ),
+    weights: (
+        s: 400,
+        m: 500,
+        l: 700,
+    ),
+);
+$borderRadius: (
+    container: 8px,
+    button: 33.5px,
+);
 $border: 1px solid rgba(0, 0, 0, 0.0497193);
 $innerBorder: 1px solid rgba(0, 0, 0, 0.15);
 $navActiveBackground: linear-gradient(

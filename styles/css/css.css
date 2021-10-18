@@ -2,19 +2,310 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 * body {
   font-family: "Commissioner", sans-serif;
   color: #7a7a7a;
   background-color: #fafafa;
 }
+* body .green {
+  color: #3cb3ab;
+}
+* body button {
+  border: none;
+  border-radius: 33.5px;
+  background-color: #3cb3ab;
+  font-family: "Commissioner", sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 20px;
+  color: #ffffff;
+}
+* body button a {
+  color: #ffffff;
+  text-decoration: none;
+}
 * body .headerBackground {
-  min-width: 100%;
-  min-height: 300px;
-  background-image: url(/assets/images/image-hero-mobile.jpg);
-  background-size: 100% 100%;
+  background: url(/assets/images/image-hero-mobile.jpg);
+  background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  padding: 32px 24px 268px;
+}
+* body .headerBackground .logo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1px 36px 1px;
+}
+* body .headerBackground .linearBackground {
+  height: 100%;
+  background: linear-gradient(180deg, #000000 0%, rgba(0, 0, 0, 0) 100%);
+}
+* body .headerBackground .navOverlay {
+  padding: 32px 24px 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+* body .headerBackground .navOverlay .hide {
+  display: none;
+}
+* body .headerBackground .navOverlay .nav {
+  background-color: #ffffff;
+  border-radius: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.0497193);
+}
+* body .headerBackground .navOverlay .nav ul .borders {
+  border-top: 1px solid rgba(47, 47, 47, 0.1);
+  border-bottom: 1px solid rgba(47, 47, 47, 0.1);
+}
+* body .headerBackground .navOverlay .nav ul li {
+  color: #000000;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 24px;
+  list-style-type: none;
+  padding: 24px 0 24px 24px;
+}
+* body .headerBackground .navOverlay .nav ul li a {
+  color: #000000;
+  text-decoration: none;
+}
+* body main {
+  padding: 0 24px 0;
+}
+* body main p {
+  font-size: 14px;
+  line-height: 24px;
+}
+* body main .section1 {
+  border: 1px solid rgba(0, 0, 0, 0.0497193);
+  border-radius: 8px;
+  text-align: center;
+  background-color: #ffffff;
+  margin: -56px 0 0 0;
+  padding: 0 24px 0;
+}
+* body main .section1 .mastercraftLogo {
+  margin: -28px 0 0 0;
+  padding: 0 0 24px 0;
+}
+* body main .section1 h1 {
+  color: #000000;
+  font-size: 20px;
+  line-height: 24px;
+  padding: 0 5px 16px 5px;
+}
+* body main .section1 .buttonAndBookmark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 0 40px 0;
+}
+* body main .section1 .buttonAndBookmark button {
+  padding: 17px 42px 19px;
+  font-size: 16px;
+}
+* body main .section1 .buttonAndBookmark .bookmark {
+  padding: 0 0 0 9px;
+}
+* body main .stats {
+  border: 1px solid rgba(0, 0, 0, 0.0497193);
+  border-radius: 8px;
+  text-align: center;
+  background-color: #ffffff;
+  margin: 24px 0 0 0;
+  padding: 8px 0 16px 0;
+}
+* body main .stats .border {
+  margin: 0 auto;
+  width: 80px;
+  border-top: 1px solid rgba(47, 47, 47, 0.1);
+  padding: 0;
+}
+* body main .stats div {
+  padding: 24px 0;
+}
+* body main .stats div h1 {
+  color: #000000;
+  font-size: 32px;
+  padding: 0 0 9px 0;
+}
+* body main .stats .scrollbar {
+  padding: 8px 0 24px;
+}
+* body main .about {
+  border: 1px solid rgba(0, 0, 0, 0.0497193);
+  border-radius: 8px;
+  background-color: #ffffff;
+  padding: 40px 23px 16px;
+  margin: 24px 0 76px 0;
+}
+* body main .about .aboutArticle h2 {
+  color: #000000;
+  font-size: 18px;
+  line-height: 22px;
+  padding: 0 0 24px;
+}
+* body main .about .aboutArticle p {
+  padding: 0 0 35px 0;
+}
+* body main .about .disabled {
+  opacity: 0.5;
+}
+* body main .about .disabled button {
+  background-color: #2f2f2f;
+  opacity: 0.5;
+}
+* body main .about .item {
+  margin: 0 0 24px 0;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 8px;
+  background-color: #ffffff;
+  padding: 24px;
+}
+* body main .about .item h3 {
+  color: #000000;
+  padding: 0 0 8px 0;
+  font-size: 14px;
+}
+* body main .about .item p {
+  padding: 0 0 24px 0;
+}
+* body main .about .item div {
+  display: flex;
+  flex-direction: row;
+}
+* body main .about .item div .numBold {
+  padding: 0 8px 0 0;
+  color: #000000;
+  font-size: 32px;
+  font-weight: 700;
+}
+* body main .about .item button {
+  min-width: 157px;
+  padding: 15px 32px 16px 33px;
+}
+* body .hidden {
+  display: none;
+}
+* body .overlay {
+  position: absolute;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 121px 24px 120px;
+  width: 100%;
+}
+* body .overlay .modal {
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 32px 24px 31px;
+}
+* body .overlay .modal p {
+  font-size: 14px;
+}
+* body .overlay .modal .modalHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 0 24px 0;
+}
+* body .overlay .modal .modalHeader h2 {
+  color: #000000;
+  font-size: 18px;
+}
+* body .overlay .modal section .modalItem {
+  margin: 24px 0 0 0;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 8px;
+  background-color: #ffffff;
+  padding: 33px 23px 32px;
+}
+* body .overlay .modal section .modalItem .enterPledge {
+  display: flex;
+  display: none;
+  flex-direction: column;
+}
+* body .overlay .modal section .modalItem .enterPledge div {
+  column-gap: 16px;
+}
+* body .overlay .modal section .modalItem .enterPledge div input {
+  font-size: 14px;
+  font-weight: 700;
+  border: 1px solid rgba(0, 0, 0, 0.0497193);
+  border-radius: 33.5px;
+  padding: 15px 0px 16px 41px;
+  width: 80%;
+}
+* body .overlay .modal section .modalItem .enterPledge div button {
+  width: 115px;
+  padding: 15px 25px 16px 26px;
+  line-height: 17px;
+}
+* body .overlay .modal section .modalItem .choose {
+  padding: 0 0 24px 0;
+}
+* body .overlay .modal section .modalItem .text {
+  padding: 0 0 24px 0;
+}
+* body .overlay .modal section .modalItem .itemsLeft {
+  font-size: 15px;
+}
+* body .overlay .modal section .modalItem p {
+  line-height: 24px;
+}
+* body .overlay .modal section .modalItem p .bold {
+  color: #000000;
+  font-size: 18px;
+  font-weight: 700;
+  padding: 0 8px 0 0;
+}
+* body .overlay .modal section .modalItem div {
+  display: flex;
+  align-items: center;
+}
+* body .overlay .modal section .modalItem div input[type=radio] {
+  border: 0;
+  width: 24px;
+  height: 24px;
+}
+* body .overlay .modal section .modalItem div .labels {
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0 0 0 16px;
+}
+* body .overlay .modal section .modalItem div .labels label {
+  font-weight: 700;
+  color: #000000;
+  padding: 0 0 8px 0;
+  font-size: 14px;
+}
+* body .overlay .thankYou {
+  margin-top: 22px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  text-align: center;
+  padding: 32px 24px 40px;
+}
+* body .overlay .thankYou img {
+  padding: 0 0 24px 0;
+}
+* body .overlay .thankYou h2 {
+  padding: 0 0 24px;
+  color: #000000;
+  font-size: 18px;
+}
+* body .overlay .thankYou p {
+  padding: 0 0 24px;
+  line-height: 24px;
+}
+* body .overlay .thankYou button {
+  padding: 15px 32.5px 16px 33.5px;
+  line-height: 17px;
 }
 
 /*# sourceMappingURL=css.css.map */
