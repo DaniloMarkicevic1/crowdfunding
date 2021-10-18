@@ -41,18 +41,17 @@ function toggleNav(value) {
 function toggleModal(value) {
     switch (value) {
         case 'backProjectBtn':
+        case 'selectReward':
+        case 'getStarted':
             overlay.classList.remove('hidden');
             modal.classList.remove('hidden');
+            body.classList.add('bodyOverflow');
             break;
         case 'closeModal':
         case 'overlay':
             overlay.classList.add('hidden');
             modal.classList.add('hidden');
-            break;
-        case 'selectReward':
-        case 'getStarted':
-            overlay.classList.remove('hidden');
-            modal.classList.remove('hidden');
+            body.classList.remove('bodyOverflow');
             break;
     }
 }

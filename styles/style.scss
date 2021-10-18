@@ -4,6 +4,9 @@
     padding: 0;
     box-sizing: border-box;
     scroll-behavior: smooth;
+    .bodyOverflow {
+        overflow-y: hidden;
+    }
     body {
         font-family: $fontFamily;
         color: map-get($colors, text);
@@ -202,11 +205,15 @@
             display: none;
         }
         .overlay {
-            position: absolute;
-            top: 0;
+            position: fixed;
+            top: 0px;
+            left: 0px;
+            right: 0px;
+            bottom: 0px;
             background-color: map-get($colors, overlayBackground);
             padding: 121px 24px 120px;
             width: 100%;
+            overflow: scroll;
             .modal {
                 background-color: map-get($colors, white);
                 border-radius: map-get($borderRadius, container);
