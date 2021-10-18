@@ -13,7 +13,6 @@ const closeModal = document.querySelector('.closeModal');
 const body = document.querySelector('body');
 
 body.addEventListener('click', (e) => {
-    console.log(e.target.tagName);
     toggleNav(e.target.classList[0]);
     toggleModal(e.target.classList[0]);
 });
