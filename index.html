@@ -60,17 +60,17 @@
             <!-- ***************** -->
             <!-- Stats Section -->
             <section class="stats">
-                <div>
+                <div class="totalAmount">
                     <h1>$89,914</h1>
                     <p>of $100,000 backed</p>
                 </div>
-                <div class="border"></div>
-                <div>
+                <div class="border1"></div>
+                <div class="backerAmount">
                     <h1>5,007</h1>
                     <p>total backers</p>
                 </div>
-                <div class="border"></div>
-                <div>
+                <div class="border2"></div>
+                <div class="daysLeft">
                     <h1>56</h1>
                     <p>days left</p>
                 </div>
@@ -101,46 +101,46 @@
                 <!-- *********** -->
                 <!-- About Items Section -->
                 <article class="item" id="discover">
-                    <h3>Bamboo Stand</h3>
+                    <h3 class="itemTitle">Bamboo Stand</h3>
                     <p class="green">Pledge $25 or more</p>
-                    <p>
+                    <p class="itemText">
                         You get an ergonomic stand made of natural bamboo.
                         You've helped us launch our promotional campaign, and
                         you’ll be added to a special Backer member list.
                     </p>
-                    <div>
+                    <div class="numOfItems">
                         <p class="numBold">101</p>
                         <p>left</p>
                     </div>
-                    <button class="selectMin">Select Reward</button>
+                    <button class="selectMin btn">Select Reward</button>
                 </article>
                 <article class="item">
-                    <h3>Black Edition Stand</h3>
+                    <h3 class="itemTitle">Black Edition Stand</h3>
                     <p class="green">Pledge $75 or more</p>
-                    <p>
+                    <p class="itemText">
                         You get a Black Special Edition computer stand and a
                         personal thank you. You’ll be added to our Backer member
                         list. Shipping is included.
                     </p>
-                    <div>
+                    <div class="numOfItems">
                         <p class="numBold">64</p>
                         <p>left</p>
                     </div>
-                    <button class="selectMed">Select Reward</button>
+                    <button class="selectMed btn">Select Reward</button>
                 </article>
                 <article class="item disabled">
-                    <h3>Mahogany Special Edition</h3>
+                    <h3 class="itemTitle">Mahogany Special Edition</h3>
                     <p class="green">Pledge $200 or more</p>
-                    <p>
+                    <p class="itemText">
                         You get two Special Edition Mahogany stands, a Backer
                         T-Shirt, and a personal thank you. You’ll be added to
                         our Backer member list. Shipping is included.
                     </p>
-                    <div>
+                    <div class="numOfItems">
                         <p class="numBold">0</p>
                         <p>left</p>
                     </div>
-                    <button class="selectHigh">Out of Stock</button>
+                    <button class="selectHigh btn">Out of Stock</button>
                 </article>
             </section>
             <!-- ************************* -->
@@ -162,12 +162,20 @@
                 <section>
                     <div class="modalItem">
                         <div class="choose">
-                            <input type="radio" name="pledge" id="noReward" />
+                            <div class="radioCircle">
+                                <input
+                                    type="radio"
+                                    name="pledge"
+                                    id="noReward"
+                                />
+                            </div>
                             <div class="labels">
-                                <label for=""> Pledge with no reward </label>
+                                <label class="pledgeText" for="pledge">
+                                    Pledge with no reward
+                                </label>
                             </div>
                         </div>
-                        <p>
+                        <p class="text">
                             Choose to support us without a reward if you simply
                             believe in our project. As a backer, you will be
                             signed up to receive product updates via email.
@@ -182,9 +190,17 @@
                     </div>
                     <div class="modalItem">
                         <div class="choose">
-                            <input type="radio" name="pledge" id="minReward" />
+                            <div class="radioCircle">
+                                <input
+                                    type="radio"
+                                    name="pledge"
+                                    id="minReward"
+                                />
+                            </div>
                             <div class="labels">
-                                <label for="pledge"> Bamboo Stand </label>
+                                <label class="pledgeText" for="pledge">
+                                    Bamboo Stand
+                                </label>
                                 <p class="green">Pledge $25 or more</p>
                             </div>
                         </div>
@@ -206,9 +222,15 @@
                     </div>
                     <div class="modalItem">
                         <div class="choose">
-                            <input type="radio" name="pledge" id="medReward" />
+                            <div class="radioCircle">
+                                <input
+                                    type="radio"
+                                    name="pledge"
+                                    id="medReward"
+                                />
+                            </div>
                             <div class="labels">
-                                <label for="pledge">
+                                <label class="pledgeText" for="pledge">
                                     Black Edition Stand
                                 </label>
                                 <p class="green">Pledge $75 or more</p>
@@ -232,9 +254,15 @@
                     </div>
                     <div class="modalItem">
                         <div class="choose">
-                            <input type="radio" name="pledge" id="highReward" />
+                            <div class="radioCircle">
+                                <input
+                                    type="radio"
+                                    name="pledge"
+                                    id="highReward"
+                                />
+                            </div>
                             <div class="labels">
-                                <label for="pledge">
+                                <label class="pledgeText" for="pledge">
                                     Mahogany Special Edition
                                 </label>
                                 <p class="green">Pledge $200 or more</p>
@@ -249,6 +277,7 @@
                         <p class="itemsLeft">
                             <span class="bold">0</span> left
                         </p>
+                        <!-- <div class="border hidden"></div> -->
                         <div class="enterPledge three">
                             <p>Enter your pledge</p>
                             <div>

@@ -15,18 +15,23 @@ $colors: (
 );
 $fonts: (
     sizes: (
-        itemsLeft: 15px,
+        xxxs: 13px,
         xxs: 14px,
+        itemsLeft: 15px,
         xs: 16px,
         s: 18px,
         m: 20px,
-        l: 32px,
+        mm: 24px,
+        l: 28px,
+        xl: 32px,
     ),
     lineHeight: (
         xxs: 17px,
         xs: 20px,
         s: 22px,
         m: 24px,
+        // l:,
+        xl: 38px,
     ),
     weights: (
         s: 400,
@@ -49,3 +54,4 @@ $backgrounds: (
     backgroundMob: url(/assets/images/image-hero-mobile.jpg),
     backgroundDesk: url(/assets/images/image-hero-desktop.jpg),
 );
+$cursor: url(/assets/images/cursor.png), pointer;

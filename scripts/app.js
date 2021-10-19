@@ -14,9 +14,10 @@ const closeModal = document.querySelector('.closeModal');
 const pledgesRadioBtns = document.querySelectorAll('input[name="pledge"]');
 const enterPledge = document.querySelectorAll('.enterPledge');
 const modalItem = document.querySelectorAll('.modalItem');
+const pledgeTexts = document.querySelectorAll('.pledgeText');
 const body = document.querySelector('body');
-
 body.addEventListener('click', (e) => {
+    // console.log(e.target.classList[0]);
     toggleNav(e.target.classList[0]);
     toggleModal(e.target.classList[0]);
     pickReward(e.target.classList[0]);
@@ -59,7 +60,16 @@ function thankYouModal(innerText) {
         body.classList.remove('bodyOverflow');
     }
 }
+
 function highlightPledge() {
+    pledgeTexts.forEach((text, i) => {
+        text.addEventListener('click', (e) => {
+            console.log(e.target.classList[0]);
+            if (e.target.classList[0]) {
+                pledgesRadioBtns[i].checked = true;
+            }
+        });
+    });
     pledgesRadioBtns.forEach((btn, i) => {
         if (btn.checked) {
             enterPledge[i].classList.remove('enterPledge');
