@@ -26,9 +26,9 @@
                 </div>
                 <nav class="nav hide">
                     <ul>
-                        <li><a href="#middle">About</a></li>
+                        <li><a class="closeNav" href="#middle">About</a></li>
                         <li class="borders">
-                            <a href="#discover">Discover</a>
+                            <a class="closeNav" href="#discover">Discover</a>
                         </li>
                         <li class="getStarted">Get Started</li>
                     </ul>
@@ -112,7 +112,7 @@
                         <p class="numBold">101</p>
                         <p>left</p>
                     </div>
-                    <button>Select Reward</button>
+                    <button class="selectMin">Select Reward</button>
                 </article>
                 <article class="item">
                     <h3>Black Edition Stand</h3>
@@ -126,9 +126,7 @@
                         <p class="numBold">64</p>
                         <p>left</p>
                     </div>
-                    <button class="selectReward">
-                        <a href="#top"> Select Reward </a>
-                    </button>
+                    <button class="selectMed">Select Reward</button>
                 </article>
                 <article class="item disabled">
                     <h3>Mahogany Special Edition</h3>
@@ -142,7 +140,7 @@
                         <p class="numBold">0</p>
                         <p>left</p>
                     </div>
-                    <button>Out of Stock</button>
+                    <button class="selectHigh">Out of Stock</button>
                 </article>
             </section>
             <!-- ************************* -->
@@ -164,7 +162,7 @@
                 <section>
                     <div class="modalItem">
                         <div class="choose">
-                            <input type="radio" name="pledge" id="" />
+                            <input type="radio" name="pledge" id="noReward" />
                             <div class="labels">
                                 <label for=""> Pledge with no reward </label>
                             </div>
@@ -174,7 +172,7 @@
                             believe in our project. As a backer, you will be
                             signed up to receive product updates via email.
                         </p>
-                        <div class="enterPledge">
+                        <div class="enterPledge zero">
                             <p>Enter your pledge</p>
                             <div>
                                 <input type="text" value="$" />
@@ -184,7 +182,7 @@
                     </div>
                     <div class="modalItem">
                         <div class="choose">
-                            <input type="radio" name="pledge" id="" />
+                            <input type="radio" name="pledge" id="minReward" />
                             <div class="labels">
                                 <label for="pledge"> Bamboo Stand </label>
                                 <p class="green">Pledge $25 or more</p>
@@ -198,7 +196,7 @@
                         <p class="itemsLeft">
                             <span class="bold">101</span> left
                         </p>
-                        <div class="enterPledge">
+                        <div class="enterPledge one">
                             <p>Enter your pledge</p>
                             <div>
                                 <input type="text" value="$25" />
@@ -208,7 +206,7 @@
                     </div>
                     <div class="modalItem">
                         <div class="choose">
-                            <input type="radio" name="pledge" id="" />
+                            <input type="radio" name="pledge" id="medReward" />
                             <div class="labels">
                                 <label for="pledge">
                                     Black Edition Stand
@@ -224,7 +222,7 @@
                         <p class="itemsLeft">
                             <span class="bold">64</span> left
                         </p>
-                        <div class="enterPledge">
+                        <div class="enterPledge two">
                             <p>Enter your pledge</p>
                             <div>
                                 <input type="text" value="$75" />
@@ -234,7 +232,7 @@
                     </div>
                     <div class="modalItem">
                         <div class="choose">
-                            <input type="radio" name="pledge" id="" />
+                            <input type="radio" name="pledge" id="highReward" />
                             <div class="labels">
                                 <label for="pledge">
                                     Mahogany Special Edition
@@ -251,7 +249,7 @@
                         <p class="itemsLeft">
                             <span class="bold">0</span> left
                         </p>
-                        <div class="enterPledge">
+                        <div class="enterPledge three">
                             <p>Enter your pledge</p>
                             <div>
                                 <input type="text" value="$200" />
