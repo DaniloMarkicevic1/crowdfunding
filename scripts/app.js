@@ -21,16 +21,22 @@ const body = document.querySelector('body');
 const currentAmount = document.querySelector('.currentAmount');
 const maxAmount = document.querySelector('.maxAmount');
 const bar = document.querySelector('.fill');
-let x = toNumber(currentAmount);
-let y = toNumber(maxAmount);
-let barFill = (+x / +y) * 100;
 // Bookmark
 const bookmarkWrap = document.querySelector('.bookmarkWrap');
 const bookmark = document.querySelector('.bookmark');
+// Numbers
+const backers = document.querySelector('.backerAmount').childNodes[1];
+const amount0 = document.querySelector('.donateAmount1');
+const amount1 = document.querySelector('.donateAmount2');
+const amount2 = document.querySelector('.donateAmount3');
+const amount3 = document.querySelector('.donateAmount4');
+let numBackers = toNumber(backers);
 
 bookmarkWrap.addEventListener('click', (e) => {
     bookmark.setAttribute('src', './assets/images/icon-bookmarked.svg');
 });
+backedAmount(currentAmount, maxAmount);
+
 body.addEventListener('click', (e) => {
     toggleNav(e.target.classList[0]);
     toggleModal(e.target.classList[0]);
@@ -38,17 +44,22 @@ body.addEventListener('click', (e) => {
     highlightPledge();
     thankYouModal(e.target.innerText);
 });
-bar.style.width = `${barFill}%`;
-function toNumber(number) {
-    let x = number.innerText.replace(/[^0-9]/g, '');
-    return x;
-}
 disabled.forEach((item, i) => {
     if (item.childNodes[1].innerText === '0') {
         item.parentElement.classList.add('disabled');
         pledgesRadioBtns[i + 1].setAttribute('disabled', 'true');
     }
 });
+function backedAmount(a, b) {
+    let x = toNumber(a);
+    let y = toNumber(b);
+    let barFill = (+x / +y) * 100;
+    bar.style.width = `${barFill}%`;
+}
+function toNumber(number) {
+    let num = number.innerText.replace(/[^0-9]/g, '');
+    return num;
+}
 function pickReward(value) {
     switch (value) {
         case 'selectMin':
@@ -71,24 +82,10 @@ function pickReward(value) {
             break;
     }
 }
-function thankYouModal(innerText) {
-    if (innerText === 'Continue') {
-        thankYou.classList.remove('hidden');
-        overlay.classList.remove('hidden');
-        modal.classList.add('hidden');
-        body.classList.add('bodyOverflow');
-    }
-    if (innerText === 'Got it!') {
-        thankYou.classList.add('hidden');
-        overlay.classList.add('hidden');
-        body.classList.remove('bodyOverflow');
-    }
-}
-
 function highlightPledge() {
     pledgeTexts.forEach((text, i) => {
         text.addEventListener('click', (e) => {
-            if (modalItem.classList[1] === 'disabled') {
+            if (modalItem[i].classList[1] === 'disabled') {
                 return;
             }
             if (e.target.classList[0]) {
@@ -106,7 +103,6 @@ function highlightPledge() {
         }
     });
 }
-
 function toggleNav(value) {
     switch (value) {
         case 'hamburger':
@@ -148,5 +144,41 @@ function toggleModal(value) {
             modal.classList.add('hidden');
             body.classList.remove('bodyOverflow');
             break;
+    }
+}
+function thankYouModal(innerText) {
+    if (innerText === 'Continue') {
+        numBackers++;
+        thankYou.classList.remove('hidden');
+        overlay.classList.remove('hidden');
+        modal.classList.add('hidden');
+        body.classList.add('bodyOverflow');
+        backers.innerText = +numBackers;
+        let newAmount;
+        if (pledgesRadioBtns[0].checked) {
+            newAmount = +toNumber(currentAmount) + +amount0.value;
+            currentAmount.innerText = `$${newAmount.toLocaleString()}`;
+            backedAmount(currentAmount, maxAmount);
+        }
+        if (pledgesRadioBtns[1].checked) {
+            newAmount = +toNumber(currentAmount) + +amount1.value;
+            currentAmount.innerText = `$${newAmount.toLocaleString()}`;
+            backedAmount(currentAmount, maxAmount);
+        }
+        if (pledgesRadioBtns[2].checked) {
+            newAmount = +toNumber(currentAmount) + +amount2.value;
+            currentAmount.innerText = `$${newAmount.toLocaleString()}`;
+            backedAmount(currentAmount, maxAmount);
+        }
+        if (pledgesRadioBtns[3].checked) {
+            newAmount = +toNumber(currentAmount) + +amount3.value;
+            currentAmount.innerText = `$${newAmount.toLocaleString()}`;
+            backedAmount(currentAmount, maxAmount);
+        }
+    }
+    if (innerText === 'Got it!') {
+        thankYou.classList.add('hidden');
+        overlay.classList.add('hidden');
+        body.classList.remove('bodyOverflow');
     }
 }
