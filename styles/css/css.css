@@ -52,7 +52,7 @@
 @media screen and (min-width: 1440px) {
   * body .headerBackground {
     background: url(/assets/images/image-hero-desktop.jpg);
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     padding: 32px 24px 288px;
@@ -171,6 +171,8 @@
 @media screen and (min-width: 1440px) {
   * body main {
     padding: 0 355px 0;
+    max-width: 1800px;
+    margin: 0 auto;
   }
 }
 * body main p {
