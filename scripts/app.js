@@ -88,6 +88,9 @@ function thankYouModal(innerText) {
 function highlightPledge() {
     pledgeTexts.forEach((text, i) => {
         text.addEventListener('click', (e) => {
+            if (modalItem.classList[1] === 'disabled') {
+                return;
+            }
             if (e.target.classList[0]) {
                 pledgesRadioBtns[i].checked = true;
             }

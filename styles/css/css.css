@@ -505,8 +505,14 @@
     font-size: 24px;
   }
 }
-* body .overlay .modal .modalHeader img {
+* body .overlay .modal .modalHeader svg {
   grid-area: x;
+}
+* body .overlay .modal .modalHeader svg:hover {
+  cursor: url(/assets/images/cursor.png), pointer;
+}
+* body .overlay .modal .modalHeader svg:hover path {
+  opacity: 1;
 }
 * body .overlay .modal section .modalItem {
   margin: 24px 0 0 0;
@@ -553,14 +559,24 @@
   font-weight: 700;
   border: 1px solid rgba(0, 0, 0, 0.0497193);
   border-radius: 33.5px;
+  background-image: url(/assets/images/dollarSign.png);
+  background-repeat: no-repeat;
+  background-position: top 16px left 24px;
   padding: 15px 0px 16px 41px;
   width: 80%;
+}
+* body .overlay .modal section .modalItem .zero div input:focus,
+* body .overlay .modal section .modalItem .one div input:focus,
+* body .overlay .modal section .modalItem .two div input:focus,
+* body .overlay .modal section .modalItem .three div input:focus {
+  outline: 1px solid #147a73;
 }
 * body .overlay .modal section .modalItem .zero div input:hover,
 * body .overlay .modal section .modalItem .one div input:hover,
 * body .overlay .modal section .modalItem .two div input:hover,
 * body .overlay .modal section .modalItem .three div input:hover {
   cursor: url(/assets/images/cursor.png), pointer;
+  outline: 1px solid #147a73;
 }
 * body .overlay .modal section .modalItem .zero div button,
 * body .overlay .modal section .modalItem .one div button,

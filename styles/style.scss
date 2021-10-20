@@ -453,8 +453,14 @@
                             font-size: map-get($fonts, sizes, mm);
                         }
                     }
-                    img {
+                    svg {
                         grid-area: x;
+                        &:hover {
+                            cursor: $cursor;
+                            path {
+                                opacity: 1;
+                            }
+                        }
                     }
                 }
                 section {
@@ -493,10 +499,22 @@
                                         $borderRadius,
                                         button
                                     );
+                                    background-image: map-get(
+                                        $backgrounds,
+                                        backgroundInput
+                                    );
+                                    background-repeat: no-repeat;
+                                    background-position: top 16px left 24px;
                                     padding: 15px 0px 16px 41px;
                                     width: 80%;
+                                    &:focus {
+                                        outline: 1px solid
+                                            map-get($colors, buttonActive);
+                                    }
                                     &:hover {
                                         cursor: $cursor;
+                                        outline: 1px solid
+                                            map-get($colors, buttonActive);
                                     }
                                 }
                                 button {
