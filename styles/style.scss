@@ -19,6 +19,7 @@
             button {
                 background-color: map-get($colors, disabledBtn);
                 opacity: 0.5;
+                pointer-events: none;
             }
         }
         button {
@@ -206,7 +207,6 @@
                     .bookmarkWrap {
                         &:hover {
                             cursor: $cursor;
-                            // opacity: 0.5;
                             .bookmark {
                                 opacity: 0.7;
                             }
@@ -214,12 +214,9 @@
                         @media screen and(min-width:1440px) {
                             display: flex;
                             flex-direction: row;
-                            // justify-content: center;
                             align-items: center;
                             border-radius: map-get($borderRadius, button);
-                            // padding: 0 118px 0 0;
                             background-color: map-get($colors, bar);
-                            // text-align: left;
                         }
                         p {
                             display: none;
@@ -344,7 +341,6 @@
                         }
                     }
                 }
-
                 .item {
                     margin: 0 0 24px 0;
                     border: $innerBorder;
@@ -520,7 +516,6 @@
                             @media screen and(min-width:1440px) {
                                 padding: 33px 0 10px 28px;
                                 grid-area: choose;
-                                // width: 400px;
                             }
                             .labels {
                                 label:hover {
@@ -528,7 +523,9 @@
                                     color: map-get($colors, button);
                                 }
                                 .green {
-                                    padding: 0 0 0 17px;
+                                    @media screen and(min-width:1440px) {
+                                        padding: 0 0 0 17px;
+                                    }
                                 }
                             }
                         }

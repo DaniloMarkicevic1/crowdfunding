@@ -43,6 +43,12 @@ function toNumber(number) {
     let x = number.innerText.replace(/[^0-9]/g, '');
     return x;
 }
+disabled.forEach((item, i) => {
+    if (item.childNodes[1].innerText === '0') {
+        item.parentElement.classList.add('disabled');
+        pledgesRadioBtns[i + 1].setAttribute('disabled', 'true');
+    }
+});
 function pickReward(value) {
     switch (value) {
         case 'selectMin':
@@ -97,11 +103,7 @@ function highlightPledge() {
         }
     });
 }
-disabled.forEach((item, i) => {
-    if (item.childNodes[1].innerText === '0') {
-        item.parentElement.classList.add('disabled');
-    }
-});
+
 function toggleNav(value) {
     switch (value) {
         case 'hamburger':
