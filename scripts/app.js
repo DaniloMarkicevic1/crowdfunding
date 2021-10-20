@@ -31,7 +31,8 @@ const amount1 = document.querySelector('.donateAmount2');
 const amount2 = document.querySelector('.donateAmount3');
 const amount3 = document.querySelector('.donateAmount4');
 let numBackers = toNumber(backers);
-
+currentAmount.innerText = sessionStorage.getItem('moneyAmount');
+backers.innerText = sessionStorage.getItem('backerAmount');
 bookmarkWrap.addEventListener('click', (e) => {
     bookmark.setAttribute('src', './assets/images/icon-bookmarked.svg');
 });
@@ -175,6 +176,8 @@ function thankYouModal(innerText) {
             currentAmount.innerText = `$${newAmount.toLocaleString()}`;
             backedAmount(currentAmount, maxAmount);
         }
+        sessionStorage.setItem('moneyAmount', currentAmount.innerText);
+        sessionStorage.setItem('backerAmount', backers.innerText);
     }
     if (innerText === 'Got it!') {
         thankYou.classList.add('hidden');
