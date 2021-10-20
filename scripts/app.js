@@ -15,16 +15,34 @@ const pledgesRadioBtns = document.querySelectorAll('input[name="pledge"]');
 const enterPledge = document.querySelectorAll('.enterPledge');
 const modalItem = document.querySelectorAll('.modalItem');
 const pledgeTexts = document.querySelectorAll('.pledgeText');
+const disabled = document.querySelectorAll('.itemsLeft');
 const body = document.querySelector('body');
+// Progress Bar
+const currentAmount = document.querySelector('.currentAmount');
+const maxAmount = document.querySelector('.maxAmount');
+const bar = document.querySelector('.fill');
+let x = toNumber(currentAmount);
+let y = toNumber(maxAmount);
+let barFill = (+x / +y) * 100;
+// Bookmark
+const bookmarkWrap = document.querySelector('.bookmarkWrap');
+const bookmark = document.querySelector('.bookmark');
+
+bookmarkWrap.addEventListener('click', (e) => {
+    bookmark.setAttribute('src', './assets/images/icon-bookmarked.svg');
+});
 body.addEventListener('click', (e) => {
-    // console.log(e.target.classList[0]);
     toggleNav(e.target.classList[0]);
     toggleModal(e.target.classList[0]);
     pickReward(e.target.classList[0]);
     highlightPledge();
     thankYouModal(e.target.innerText);
 });
-
+bar.style.width = `${barFill}%`;
+function toNumber(number) {
+    let x = number.innerText.replace(/[^0-9]/g, '');
+    return x;
+}
 function pickReward(value) {
     switch (value) {
         case 'selectMin':
@@ -64,7 +82,6 @@ function thankYouModal(innerText) {
 function highlightPledge() {
     pledgeTexts.forEach((text, i) => {
         text.addEventListener('click', (e) => {
-            console.log(e.target.classList[0]);
             if (e.target.classList[0]) {
                 pledgesRadioBtns[i].checked = true;
             }
@@ -80,6 +97,11 @@ function highlightPledge() {
         }
     });
 }
+disabled.forEach((item, i) => {
+    if (item.childNodes[1].innerText === '0') {
+        item.parentElement.classList.add('disabled');
+    }
+});
 function toggleNav(value) {
     switch (value) {
         case 'hamburger':

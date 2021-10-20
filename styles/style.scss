@@ -14,6 +14,13 @@
         .green {
             color: map-get($colors, button);
         }
+        .disabled {
+            opacity: 0.5;
+            button {
+                background-color: map-get($colors, disabledBtn);
+                opacity: 0.5;
+            }
+        }
         button {
             border: none;
             border-radius: map-get($borderRadius, button);
@@ -98,6 +105,7 @@
                     border: $border;
                     @media screen and(min-width:1440px) {
                         background-color: unset;
+                        border: none;
                     }
                     ul {
                         @media screen and(min-width:1440px) {
@@ -107,6 +115,10 @@
                         .borders {
                             border-top: 1px solid map-get($colors, border);
                             border-bottom: 1px solid map-get($colors, border);
+                            @media screen and(min-width:1440px) {
+                                border-top: none;
+                                border-bottom: none;
+                            }
                         }
                         li {
                             color: map-get($colors, black);
@@ -115,6 +127,9 @@
                             line-height: map-get($fonts, lineHeight, m);
                             list-style-type: none;
                             padding: 22px 0 23px 23px;
+                            &:hover {
+                                cursor: $cursor;
+                            }
                             @media screen and(min-width:1440px) {
                                 color: map-get($colors, white);
                                 font-size: map-get($fonts, sizes, xxxs);
@@ -123,6 +138,9 @@
                             a {
                                 color: map-get($colors, black);
                                 text-decoration: none;
+                                &:hover {
+                                    cursor: $cursor;
+                                }
                                 @media screen and(min-width:1440px) {
                                     color: map-get($colors, white);
                                 }
@@ -185,8 +203,39 @@
                         padding: 17px 42px 19px;
                         font-size: map-get($fonts, sizes, xs);
                     }
-                    .bookmark {
-                        padding: 0 0 0 9px;
+                    .bookmarkWrap {
+                        &:hover {
+                            cursor: $cursor;
+                            // opacity: 0.5;
+                            .bookmark {
+                                opacity: 0.7;
+                            }
+                        }
+                        @media screen and(min-width:1440px) {
+                            display: flex;
+                            flex-direction: row;
+                            // justify-content: center;
+                            align-items: center;
+                            border-radius: map-get($borderRadius, button);
+                            // padding: 0 118px 0 0;
+                            background-color: map-get($colors, bar);
+                            // text-align: left;
+                        }
+                        p {
+                            display: none;
+                            @media screen and(min-width:1440px) {
+                                display: block;
+                                color: map-get($colors, text);
+                                font-weight: map-get($fonts, weights, l);
+                                padding: 0 24px 0 16px;
+                            }
+                        }
+                        .bookmark {
+                            padding: 0 0 0 9px;
+                            @media screen and(min-width:1440px) {
+                                padding: 0;
+                            }
+                        }
                     }
                 }
             }
@@ -238,16 +287,34 @@
                 }
                 div {
                     padding: 24px 0;
+                    @media screen and(min-width:1440px) {
+                        padding: 48px 0 37px 0;
+                    }
                     h1 {
                         color: map-get($colors, black);
                         font-size: map-get($fonts, sizes, xl);
                         padding: 0 0 9px 0;
                     }
                 }
-                .scrollbar {
-                    padding: 8px 0 24px;
+                .progressbar {
+                    padding: 0;
+                    margin: 0px 24px 24px;
                     grid-area: scrollbar;
                     justify-self: center;
+                    height: 12px;
+                    border-radius: map-get($borderRadius, button);
+                    background-color: map-get($colors, bar);
+                    @media screen and(min-width:1440px) {
+                        padding: 0;
+                        width: 100%;
+                        margin: 0px 24px 49px;
+                    }
+                    .fill {
+                        border-radius: map-get($borderRadius, button);
+                        padding: 0;
+                        height: 12px;
+                        background-color: map-get($colors, button);
+                    }
                 }
             }
             .about {
@@ -277,13 +344,7 @@
                         }
                     }
                 }
-                .disabled {
-                    opacity: 0.5;
-                    button {
-                        background-color: map-get($colors, disabledBtn);
-                        opacity: 0.5;
-                    }
-                }
+
                 .item {
                     margin: 0 0 24px 0;
                     border: $innerBorder;
@@ -583,16 +644,3 @@
     }
 }
 // sass --watch styles/style.scss styles/css/css.css
-
-// #yes {
-//     margin: 0 0 0 5px;
-//     appearance: none;
-//     border-radius: 50%;
-//     width: 12px;
-//     height: 12px;
-//     background-color: #fff;
-// }
-// #yes:checked {
-//     background-color: map-get($colors, button);
-//     box-shadow: 0 0 0 1px map-get($colors, button);
-// }
