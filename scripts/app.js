@@ -31,13 +31,16 @@ const amount1 = document.querySelector('.donateAmount2');
 const amount2 = document.querySelector('.donateAmount3');
 const amount3 = document.querySelector('.donateAmount4');
 const numBackers = toNumber(backers);
+
 if (sessionStorage.getItem('moneyAmount')) {
     currentAmount.innerText = sessionStorage.getItem('moneyAmount');
     backers.innerText = sessionStorage.getItem('backerAmount');
 }
+
 bookmarkWrap.addEventListener('click', (e) => {
     bookmark.setAttribute('src', './assets/images/icon-bookmarked.svg');
 });
+
 backedAmount(currentAmount, maxAmount);
 
 body.addEventListener('click', (e) => {
@@ -47,22 +50,26 @@ body.addEventListener('click', (e) => {
     highlightPledge();
     thankYouModal(e.target.innerText);
 });
+
 disabled.forEach((item, i) => {
     if (item.childNodes[1].innerText === '0') {
         item.parentElement.classList.add('disabled');
         pledgesRadioBtns[i + 1].setAttribute('disabled', 'true');
     }
 });
+
 function backedAmount(a, b) {
     const x = toNumber(a);
     const y = toNumber(b);
     const barFill = (+x / +y) * 100;
     bar.style.width = `${barFill}%`;
 }
+
 function toNumber(number) {
     const num = number.innerText.replace(/[^0-9]/g, '');
     return num;
 }
+
 function pickReward(value) {
     switch (value) {
         case 'selectMin':
@@ -85,6 +92,7 @@ function pickReward(value) {
             break;
     }
 }
+
 function highlightPledge() {
     pledgeTexts.forEach((text, i) => {
         text.addEventListener('click', (e) => {
@@ -107,6 +115,7 @@ function highlightPledge() {
         }
     });
 }
+
 function toggleNav(value) {
     switch (value) {
         case 'hamburger':
@@ -131,6 +140,7 @@ function toggleNav(value) {
             break;
     }
 }
+
 function toggleModal(value) {
     switch (value) {
         case 'backProjectBtn':
@@ -150,6 +160,7 @@ function toggleModal(value) {
             break;
     }
 }
+
 function thankYouModal(innerText) {
     if (innerText === 'Continue') {
         numBackers++;
