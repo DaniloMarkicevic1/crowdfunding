@@ -39,7 +39,17 @@ bookmarkWrap.addEventListener('click', (e) => {
     bookmark.setAttribute('src', './assets/images/icon-bookmarked.svg');
 });
 backedAmount(currentAmount, maxAmount);
+function onCreated(node) {
+    console.log(node);
+}
 
+var createBookmark = chrome.bookmarks.create({
+    parentId: extensionsFolderId,
+    title: 'Extensions doc',
+    url: 'https://developer.chrome.com/docs/extensions',
+});
+
+createBookmark.then(onCreated);
 body.addEventListener('click', (e) => {
     toggleNav(e.target.classList[0]);
     toggleModal(e.target.classList[0]);
@@ -159,6 +169,7 @@ function thankYouModal(innerText) {
         body.classList.add('bodyOverflow');
         backers.innerText = +numBackers;
         let newAmount;
+
         if (pledgesRadioBtns[0].checked) {
             newAmount = +toNumber(currentAmount) + +amount0.value;
             currentAmount.innerText = `$${newAmount.toLocaleString()}`;
