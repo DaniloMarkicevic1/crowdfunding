@@ -30,9 +30,11 @@ const amount0 = document.querySelector('.donateAmount1');
 const amount1 = document.querySelector('.donateAmount2');
 const amount2 = document.querySelector('.donateAmount3');
 const amount3 = document.querySelector('.donateAmount4');
-let numBackers = toNumber(backers);
-currentAmount.innerText = sessionStorage.getItem('moneyAmount');
-backers.innerText = sessionStorage.getItem('backerAmount');
+const numBackers = toNumber(backers);
+if (sessionStorage.getItem('moneyAmount')) {
+    currentAmount.innerText = sessionStorage.getItem('moneyAmount');
+    backers.innerText = sessionStorage.getItem('backerAmount');
+}
 bookmarkWrap.addEventListener('click', (e) => {
     bookmark.setAttribute('src', './assets/images/icon-bookmarked.svg');
 });
@@ -52,13 +54,13 @@ disabled.forEach((item, i) => {
     }
 });
 function backedAmount(a, b) {
-    let x = toNumber(a);
-    let y = toNumber(b);
-    let barFill = (+x / +y) * 100;
+    const x = toNumber(a);
+    const y = toNumber(b);
+    const barFill = (+x / +y) * 100;
     bar.style.width = `${barFill}%`;
 }
 function toNumber(number) {
-    let num = number.innerText.replace(/[^0-9]/g, '');
+    const num = number.innerText.replace(/[^0-9]/g, '');
     return num;
 }
 function pickReward(value) {
@@ -89,6 +91,7 @@ function highlightPledge() {
             if (modalItem[i].classList[1] === 'disabled') {
                 return;
             }
+
             if (e.target.classList[0]) {
                 pledgesRadioBtns[i].checked = true;
             }
@@ -161,16 +164,19 @@ function thankYouModal(innerText) {
             currentAmount.innerText = `$${newAmount.toLocaleString()}`;
             backedAmount(currentAmount, maxAmount);
         }
+
         if (pledgesRadioBtns[1].checked) {
             newAmount = +toNumber(currentAmount) + +amount1.value;
             currentAmount.innerText = `$${newAmount.toLocaleString()}`;
             backedAmount(currentAmount, maxAmount);
         }
+
         if (pledgesRadioBtns[2].checked) {
             newAmount = +toNumber(currentAmount) + +amount2.value;
             currentAmount.innerText = `$${newAmount.toLocaleString()}`;
             backedAmount(currentAmount, maxAmount);
         }
+
         if (pledgesRadioBtns[3].checked) {
             newAmount = +toNumber(currentAmount) + +amount3.value;
             currentAmount.innerText = `$${newAmount.toLocaleString()}`;
@@ -179,6 +185,7 @@ function thankYouModal(innerText) {
         sessionStorage.setItem('moneyAmount', currentAmount.innerText);
         sessionStorage.setItem('backerAmount', backers.innerText);
     }
+
     if (innerText === 'Got it!') {
         thankYou.classList.add('hidden');
         overlay.classList.add('hidden');
