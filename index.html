@@ -11,47 +11,6 @@
         />
         <link rel="stylesheet" href="styles/css/css.css" />
         <title>CrowdFund</title>
-        <script type="text/javascript">
-            function addBookmark(url, title) {
-                if (!url) {
-                    url = window.location;
-                }
-                if (!title) {
-                    title = document.title;
-                }
-                var browser = navigator.userAgent.toLowerCase();
-                if (window.sidebar) {
-                    // Mozilla, Firefox, Netscape
-                    window.sidebar.addPanel(title, url, '');
-                } else if (window.external) {
-                    // IE or chrome
-                    if (browser.indexOf('chrome') == -1) {
-                        // ie
-                        window.external.AddFavorite(url, title);
-                    } else {
-                        // chrome
-                        alert(
-                            'Please Press CTRL+D (or Command+D for macs) to bookmark this page'
-                        );
-                    }
-                } else if (window.opera && window.print) {
-                    // Opera - automatically adds to sidebar if rel=sidebar in the tag
-                    return true;
-                } else if (browser.indexOf('konqueror') != -1) {
-                    // Konqueror
-                    alert('Please press CTRL+B to bookmark this page.');
-                } else if (browser.indexOf('webkit') != -1) {
-                    // safari
-                    alert(
-                        'Please press CTRL+B (or Command+D for macs) to bookmark this page.'
-                    );
-                } else {
-                    alert(
-                        'Your browser cannot add bookmarks using this link. Please add this link manually.'
-                    );
-                }
-            }
-        </script>
     </head>
     <body>
         <!-- TOP Section, Nav -->
@@ -91,10 +50,7 @@
                 </p>
                 <div class="buttonAndBookmark">
                     <button class="backProjectBtn">Back this project</button>
-                    <div
-                        class="bookmarkWrap"
-                        onclick="addBookmark('https://crowdfunding-silk.vercel.app/','crowdfund');"
-                    >
+                    <div class="bookmarkWrap">
                         <img
                             class="bookmark"
                             src="./assets/images/icon-bookmark.svg"
