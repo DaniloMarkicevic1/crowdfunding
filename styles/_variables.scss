@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Commissioner:wght@400;500;700&display=swap');
+
+$fontFamily: 'Commissioner', sans-serif;
+
+$colors: (
+    white: #ffffff,
+    button: #3cb3ab,
+    buttonActive: #147a73,
+    text: #7a7a7a,
+    black: #000000,
+    background: #fafafa,
+    border: rgba(47, 47, 47, 0.1),
+    overlayBackground: rgba(0, 0, 0, 0.5),
+    disabledBtn: #2f2f2f,
+    bar: rgba(47, 47, 47, 0.05),
+);
+$fonts: (
+    sizes: (
+        xxxs: 13px,
+        xxs: 14px,
+        itemsLeft: 15px,
+        xs: 16px,
+        s: 18px,
+        m: 20px,
+        mm: 24px,
+        l: 28px,
+        xl: 32px,
+    ),
+    lineHeight: (
+        xxs: 17px,
+        xs: 20px,
+        s: 22px,
+        m: 24px,
+        // l:,
+        xl: 38px,
+    ),
+    weights: (
+        s: 400,
+        m: 500,
+        l: 700,
+    ),
+);
+$borderRadius: (
+    container: 8px,
+    button: 33.5px,
+);
+$border: 1px solid rgba(0, 0, 0, 0.0497193);
+$innerBorder: 1px solid rgba(0, 0, 0, 0.15);
+$navActiveBackground: linear-gradient(
+    180deg,
+    #000000 0%,
+    rgba(0, 0, 0, 0.0001) 100%
+);
+$backgrounds: (
+    backgroundMob: url(/assets/images/image-hero-mobile.jpg),
+    backgroundDesk: url(/assets/images/image-hero-desktop.jpg),
+    backgroundInput: url(/assets/images/dollarSign.png),
+);
+$cursor: url(/assets/images/cursor.png), pointer;
